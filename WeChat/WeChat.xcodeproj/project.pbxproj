@@ -18,6 +18,7 @@
 		333D6D861CBFCDAE0070E969 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 333D6D821CBFCDAD0070E969 /* MBProgressHUD.bundle */; };
 		333D6D871CBFCDAE0070E969 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D841CBFCDAE0070E969 /* MBProgressHUD.m */; };
 		333D6D8E1CBFD9A80070E969 /* WCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D8D1CBFD9A80070E969 /* WCNavigationController.m */; };
+		333D6D921CBFDE770070E969 /* WCMeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D911CBFDE770070E969 /* WCMeTableController.m */; };
 		33FA18281CBF52C3005A9933 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA18271CBF52C3005A9933 /* main.m */; };
 		33FA182E1CBF52C3005A9933 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA182D1CBF52C3005A9933 /* ViewController.m */; };
 		33FA18331CBF52C3005A9933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33FA18321CBF52C3005A9933 /* Assets.xcassets */; };
@@ -199,6 +200,8 @@
 		333D6D841CBFCDAE0070E969 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		333D6D8C1CBFD9A80070E969 /* WCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCNavigationController.h; sourceTree = "<group>"; };
 		333D6D8D1CBFD9A80070E969 /* WCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCNavigationController.m; sourceTree = "<group>"; };
+		333D6D901CBFDE770070E969 /* WCMeTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMeTableController.h; sourceTree = "<group>"; };
+		333D6D911CBFDE770070E969 /* WCMeTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMeTableController.m; sourceTree = "<group>"; };
 		33FA18231CBF52C3005A9933 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FA18271CBF52C3005A9933 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33FA182C1CBF52C3005A9933 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -586,6 +589,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		333D6D8F1CBFDE4B0070E969 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				333D6D901CBFDE770070E969 /* WCMeTableController.h */,
+				333D6D911CBFDE770070E969 /* WCMeTableController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		33FA181A1CBF52C3005A9933 = {
@@ -1469,6 +1481,7 @@
 		33FA1B7E1CBF574A005A9933 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				333D6D8F1CBFDE4B0070E969 /* Controller */,
 				33FA1C051CBF5895005A9933 /* Main.storyboard */,
 			);
 			path = "Main(主要)";
@@ -1739,6 +1752,7 @@
 				33FA1BA21CBF574A005A9933 /* XMPPSystemInputActivityMonitor.m in Sources */,
 				33FA1BAA1CBF574A005A9933 /* XMPPRoomCoreDataStorage.m in Sources */,
 				33FA1B821CBF574A005A9933 /* XMPPAnonymousAuthentication.m in Sources */,
+				333D6D921CBFDE770070E969 /* WCMeTableController.m in Sources */,
 				33FA1B8B1CBF574A005A9933 /* NSXMLElement+XMPP.m in Sources */,
 				33FA1BF31CBF574A005A9933 /* GCDAsyncSocket.m in Sources */,
 				33FA1BFA1CBF574A005A9933 /* DispatchQueueLogFormatter.m in Sources */,

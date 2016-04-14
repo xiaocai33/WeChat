@@ -167,6 +167,13 @@
     
     //与服务器断开连接
     [_stream disconnect];
+    
+    // 3. 回到登录界面
+    //跳转控制器
+    //dispatch_async(dispatch_get_main_queue(), ^{
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+        self.window.rootViewController = storyboard.instantiateInitialViewController;
+    //});
 }
 
 #pragma make - 开始登陆

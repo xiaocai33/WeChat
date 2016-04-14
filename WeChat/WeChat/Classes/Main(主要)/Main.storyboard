@@ -15,10 +15,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="T8g-R5-7OD" kind="relationship" relationship="viewControllers" id="IGj-AZ-EPk"/>
-                        <segue destination="3h7-CK-JyT" kind="relationship" relationship="viewControllers" id="8br-Oh-p9c"/>
-                        <segue destination="Jrk-cw-QtN" kind="relationship" relationship="viewControllers" id="dJf-j5-HUZ"/>
-                        <segue destination="Iwk-Ea-p8d" kind="relationship" relationship="viewControllers" id="bT6-dP-L7G"/>
+                        <segue destination="T8g-R5-7OD" kind="relationship" relationship="viewControllers" id="XJ6-kR-Q3I"/>
+                        <segue destination="3h7-CK-JyT" kind="relationship" relationship="viewControllers" id="oH5-nN-XDK"/>
+                        <segue destination="Jrk-cw-QtN" kind="relationship" relationship="viewControllers" id="Byd-lz-G60"/>
+                        <segue destination="Iwk-Ea-p8d" kind="relationship" relationship="viewControllers" id="dtX-Mf-Q1k"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lz-bJ-fq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -115,7 +115,7 @@
         <!--Root View Controller-->
         <scene sceneID="RP4-ir-7tj">
             <objects>
-                <tableViewController id="KYG-Kc-FOs" sceneMemberID="viewController">
+                <tableViewController id="KYG-Kc-FOs" customClass="WCMeTableController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zsa-R0-rJb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +135,9 @@
                             <outlet property="delegate" destination="KYG-Kc-FOs" id="ozW-HW-NiL"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="z24-dK-cO7"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHx-cB-pt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
