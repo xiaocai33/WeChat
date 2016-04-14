@@ -181,7 +181,13 @@
                             <constraint firstItem="6pM-Ma-bR5" firstAttribute="top" secondItem="egX-pM-RgO" secondAttribute="bottom" constant="20" id="c01-YK-ybV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PSW-h5-I9k"/>
+                    <navigationItem key="navigationItem" id="PSW-h5-I9k">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="O6h-Gz-tEB">
+                            <connections>
+                                <action selector="dismiss:" destination="ocw-oT-nZq" id="RAT-HF-ejv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="leftConstraint" destination="3PM-A0-OM0" id="7P0-Sy-f6x"/>
                         <outlet property="loginBtn" destination="ffY-mp-8g5" id="Xvf-m3-rTW"/>

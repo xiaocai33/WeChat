@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "XMPPFramework.h"
+#import "WCNavigationController.h"
 /*
  * 在AppDelegate实现登录
  
@@ -41,7 +42,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //设置所有导航控制器的样式
+    [WCNavigationController setupNav];
     
+    //设置状态栏颜色
+    //[application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     return YES;
 }
@@ -175,7 +180,8 @@
     //连接服务器
     [self connectToHost];
     
-    
 }
+
+
 
 @end

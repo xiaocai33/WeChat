@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.title = @"其他登录方式";
+    self.title = @"其他方式登录";
     
     //判断当前设备
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone){//IPhone设备
@@ -106,6 +106,17 @@
     // 此方法是在子线程补调用，所以在主线程刷新UI
     UIStoryboard *mainStroy = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.view.window.rootViewController = mainStroy.instantiateInitialViewController;
+}
+
+/**
+ *  取消
+ */
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)dealloc{
+    WCLog(@"%s", __func__);
 }
 
 @end

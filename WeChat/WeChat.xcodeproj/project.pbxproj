@@ -17,6 +17,7 @@
 		333D6D851CBFCDAE0070E969 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D811CBFCDAD0070E969 /* MBProgressHUD+HM.m */; };
 		333D6D861CBFCDAE0070E969 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 333D6D821CBFCDAD0070E969 /* MBProgressHUD.bundle */; };
 		333D6D871CBFCDAE0070E969 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D841CBFCDAE0070E969 /* MBProgressHUD.m */; };
+		333D6D8E1CBFD9A80070E969 /* WCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D8D1CBFD9A80070E969 /* WCNavigationController.m */; };
 		33FA18281CBF52C3005A9933 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA18271CBF52C3005A9933 /* main.m */; };
 		33FA182E1CBF52C3005A9933 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA182D1CBF52C3005A9933 /* ViewController.m */; };
 		33FA18331CBF52C3005A9933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33FA18321CBF52C3005A9933 /* Assets.xcassets */; };
@@ -196,6 +197,8 @@
 		333D6D821CBFCDAD0070E969 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		333D6D831CBFCDAE0070E969 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		333D6D841CBFCDAE0070E969 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		333D6D8C1CBFD9A80070E969 /* WCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCNavigationController.h; sourceTree = "<group>"; };
+		333D6D8D1CBFD9A80070E969 /* WCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCNavigationController.m; sourceTree = "<group>"; };
 		33FA18231CBF52C3005A9933 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FA18271CBF52C3005A9933 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33FA182C1CBF52C3005A9933 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -552,6 +555,39 @@
 			path = MBProgessHUD;
 			sourceTree = "<group>";
 		};
+		333D6D881CBFD9830070E969 /* Comment(公共) */ = {
+			isa = PBXGroup;
+			children = (
+				333D6D891CBFD9830070E969 /* Controller */,
+				333D6D8A1CBFD9830070E969 /* Model */,
+				333D6D8B1CBFD9830070E969 /* View */,
+			);
+			path = "Comment(公共)";
+			sourceTree = "<group>";
+		};
+		333D6D891CBFD9830070E969 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				333D6D8C1CBFD9A80070E969 /* WCNavigationController.h */,
+				333D6D8D1CBFD9A80070E969 /* WCNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		333D6D8A1CBFD9830070E969 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		333D6D8B1CBFD9830070E969 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		33FA181A1CBF52C3005A9933 = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +654,7 @@
 		33FA1A2D1CBF5749005A9933 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				333D6D881CBFD9830070E969 /* Comment(公共) */,
 				33FA1A2E1CBF5749005A9933 /* Lib */,
 				33FA1B7D1CBF574A005A9933 /* Login(登录) */,
 				33FA1B7E1CBF574A005A9933 /* Main(主要) */,
@@ -1693,6 +1730,7 @@
 				33FA1BF51CBF574A005A9933 /* DDASLLogger.m in Sources */,
 				33FA1BCF1CBF574A005A9933 /* XMPPTransports.m in Sources */,
 				33FA1BE01CBF574A005A9933 /* XMPPBlocking.m in Sources */,
+				333D6D8E1CBFD9A80070E969 /* WCNavigationController.m in Sources */,
 				33FA1BEC1CBF574A005A9933 /* NSXMLElement+XEP_0335.m in Sources */,
 				333D6D7A1CBFCA5D0070E969 /* UIImage+WF.m in Sources */,
 				33FA1BDA1CBF574A005A9933 /* XMPPMessageArchiving.m in Sources */,
