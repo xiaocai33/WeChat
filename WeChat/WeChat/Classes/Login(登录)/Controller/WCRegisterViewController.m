@@ -100,4 +100,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)textChange {
+    
+    BOOL status = (self.nameText.text.length != 0 && self.pwdText.text.length != 0);
+    self.registerBtn.enabled = status;
+}
+
+
 @end
