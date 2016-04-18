@@ -1,16 +1,17 @@
 //
-//  UITextField+WF.m
-//  WeiXin
+//  UITextField+Extension.m
+//  WeChat
 //
-//  Created by Yong Feng Guo on 14-11-21.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by 小蔡 on 16/4/18.
+//  Copyright © 2016年 xiaocai. All rights reserved.
 //
 
-#import "UITextField+WF.h"
+#import "UITextField+Extension.h"
 
-@implementation UITextField (WF)
+@implementation UITextField (Extension)
+
 -(void)addLeftViewWithImage:(NSString *)image{
-   
+    
     
     // 密码输入框左边图片
     UIImageView *lockIv = [[UIImageView alloc] init];
@@ -41,4 +42,5 @@
     NSPredicate *prediate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", telRegex];
     return [prediate evaluateWithObject:self.text];
 }
+
 @end

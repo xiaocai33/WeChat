@@ -1,14 +1,14 @@
 //
-//  UIButton+WF.m
-//  WeiXin
+//  UIButton+Extension.m
+//  WeChat
 //
-//  Created by Yong Feng Guo on 14-11-18.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by 小蔡 on 16/4/18.
+//  Copyright © 2016年 xiaocai. All rights reserved.
 //
 
-#import "UIButton+WF.h"
+#import "UIButton+Extension.h"
 
-@implementation UIButton (WF)
+@implementation UIButton (Extension)
 
 -(void)setN_BG:(NSString *)nbg H_BG:(NSString *)hbg{
     [self setBackgroundImage:[UIImage imageNamed:nbg] forState:UIControlStateNormal];
@@ -20,4 +20,5 @@
     [self setBackgroundImage:[UIImage stretchedImageWithName:nbg] forState:UIControlStateNormal];
     [self setBackgroundImage:[UIImage stretchedImageWithName:hbg] forState:UIControlStateHighlighted];
 }
+
 @end

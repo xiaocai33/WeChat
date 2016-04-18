@@ -1,14 +1,14 @@
 //
-//  UIImage+WF.m
-//  WeiXin
+//  UIImage+Extension.m
+//  WeChat
 //
-//  Created by Yong Feng Guo on 14-11-19.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by 小蔡 on 16/4/18.
+//  Copyright © 2016年 xiaocai. All rights reserved.
 //
 
-#import "UIImage+WF.h"
+#import "UIImage+Extension.h"
 
-@implementation UIImage (WF)
+@implementation UIImage (Extension)
 
 +(UIImage *)stretchedImageWithName:(NSString *)name{
     

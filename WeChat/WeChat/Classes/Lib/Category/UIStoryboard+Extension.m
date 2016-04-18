@@ -1,14 +1,14 @@
 //
-//  UIStoryboard+WF.m
-//  WeiXin
+//  UIStoryboard+Extension.m
+//  WeChat
 //
-//  Created by Yong Feng Guo on 14-11-20.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by 小蔡 on 16/4/18.
+//  Copyright © 2016年 xiaocai. All rights reserved.
 //
 
-#import "UIStoryboard+WF.h"
+#import "UIStoryboard+Extension.h"
 
-@implementation UIStoryboard (WF)
+@implementation UIStoryboard (Extension)
 
 +(void)showInitialVCWithName:(NSString *)name{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:name bundle:nil];
@@ -20,4 +20,5 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:name bundle:nil];
     return [storyboard instantiateInitialViewController];
 }
+
 @end

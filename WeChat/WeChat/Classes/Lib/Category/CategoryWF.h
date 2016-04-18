@@ -1,18 +1,18 @@
 //
 //  CategoryWF.h
-//  WeiXin
+//  WeChat
 //
-//  Created by Yong Feng Guo on 14-11-19.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by 小蔡 on 16/4/18.
+//  Copyright © 2016年 xiaocai. All rights reserved.
 //
 
 #ifndef WeiXin_CategoryWF_h
 #define WeiXin_CategoryWF_h
-#import "UIView+WF.h"
-#import "UIButton+WF.h"
-#import "UIImage+WF.h"
-#import "UIStoryboard+WF.h"
-#import "UITextField+WF.h"
-#import "UIScreen+WF.h"
+#import "UIView+Extension.h"
+#import "UIButton+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIStoryboard+Extension.h"
+#import "UITextField+Extension.h"
+#import "UIScreen+Extension.h"
 
 #endif

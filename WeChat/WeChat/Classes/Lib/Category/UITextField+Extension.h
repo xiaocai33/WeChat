@@ -1,14 +1,14 @@
 //
-//  UITextField+WF.h
-//  WeiXin
+//  UITextField+Extension.h
+//  WeChat
 //
-//  Created by Yong Feng Guo on 14-11-21.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by 小蔡 on 16/4/18.
+//  Copyright © 2016年 xiaocai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UITextField (WF)
+@interface UITextField (Extension)
 
 /**
  添加文件输入框左边的View,添加图片
@@ -19,4 +19,5 @@
  * 判断是否为手机号码
  */
 -(BOOL)isTelphoneNum;
+
 @end

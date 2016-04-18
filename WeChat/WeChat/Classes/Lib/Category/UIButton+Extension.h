@@ -1,15 +1,14 @@
 //
-//  UIButton+WF.h
-//  WeiXin
+//  UIButton+Extension.h
+//  WeChat
 //
-//  Created by Yong Feng Guo on 14-11-18.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by 小蔡 on 16/4/18.
+//  Copyright © 2016年 xiaocai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIButton (WF)
-
+@interface UIButton (Extension)
 /**
  * 设置普通状态与高亮状态的背景图片
  */
