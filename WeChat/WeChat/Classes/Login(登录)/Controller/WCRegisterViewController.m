@@ -43,6 +43,14 @@
 - (IBAction)registerBtnClick {
     [self.view endEditing:YES];
     
+    // 判断用户输入的是否为手机号码
+    if (![self.nameText isTelphoneNum]) {
+        [MBProgressHUD showError:@"请输入正确的手机号" toView:self.view];
+        self.nameText.text = nil;
+        self.pwdText.text = nil;
+        return;
+    }
+    
     //保存单例
     UserInfo *user = [UserInfo sharedUserInfo];
     user.registerName = self.nameText.text;
