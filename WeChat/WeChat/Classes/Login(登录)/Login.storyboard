@@ -25,7 +25,7 @@
         <!--登录View-->
         <scene sceneID="cYi-WZ-YTM">
             <objects>
-                <viewController id="b3g-vf-H1E" userLabel="登录View" sceneMemberID="viewController">
+                <viewController id="b3g-vf-H1E" userLabel="登录View" customClass="WCLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lnh-ka-ruu"/>
                         <viewControllerLayoutGuide type="bottom" id="JoF-Uf-hE8"/>
@@ -40,21 +40,24 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DefaultHead" translatesAutoresizingMaskIntoConstraints="NO" id="fMj-IO-EW5">
                                         <rect key="frame" x="100" y="14" width="80" height="80"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-uS-aaX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-uS-aaX">
                                         <rect key="frame" x="8" y="114" width="264" height="21"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgm-ny-HNG">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgm-ny-HNG">
                                         <rect key="frame" x="8" y="143" width="264" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bb-Zy-dem">
-                                        <rect key="frame" x="106" y="181" width="67" height="30"/>
+                                        <rect key="frame" x="8" y="181" width="264" height="30"/>
                                         <state key="normal" title="登录"/>
+                                        <connections>
+                                            <action selector="login" destination="b3g-vf-H1E" eventType="touchUpInside" id="Xci-oq-i77"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSB-HE-Yh5">
                                         <rect key="frame" x="155" y="212" width="46" height="26"/>
@@ -94,6 +97,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="y4I-vA-Be1"/>
+                    <connections>
+                        <outlet property="loginBtn" destination="4bb-Zy-dem" id="A9C-l5-1KV"/>
+                        <outlet property="nameLabel" destination="gpy-uS-aaX" id="MCj-vm-ULi"/>
+                        <outlet property="pwdTextField" destination="vgm-ny-HNG" id="hMF-Mu-Cjh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfF-1O-4sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

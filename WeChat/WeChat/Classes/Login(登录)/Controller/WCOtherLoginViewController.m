@@ -52,64 +52,16 @@
      */
     
     //1.把用户名和密码放在沙盒
+    
+    // 保存数据到单例
     UserInfo *userInfo = [UserInfo sharedUserInfo];
     userInfo.user = self.nameText.text;
     userInfo.pwd = self.pwdText.text;
+    
+    //调用父类登录
+    [super login];
 
-    //提示用户正在登录
-    [MBProgressHUD showMessage:@"正在登录..." toView:self.view];
-    
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    
-    //防止循环引用
-    __weak typeof(self) weakSelf = self;
-    [app XMPPLogin:^(resultBlockType type) {
-        [weakSelf handWithResultType:type];
-    }];
-}
 
-/**
- *  根据返回结果,处理
- */
-- (void)handWithResultType:(resultBlockType)type{
-    // 主线程刷新UI
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //移除蒙版
-        [MBProgressHUD hideHUDForView:self.view];
-        
-        switch (type) {
-            case resultBlockTypeSuccess:
-                WCLog(@"登录成功");
-                [self enterMainController];
-                break;
-            case resultBlockTypeFailed:
-                [MBProgressHUD showError:@"用户名或密码错误"];
-                WCLog(@"登录失败");
-                break;
-            case resultBlockTypeNetOut:
-                WCLog(@"网络超时");
-                [MBProgressHUD showError:@"网络超时"];
-                break;
-                
-            default:
-                break;
-        }
-    });
-   }
-/**
- *  跳转到主控制器
- */
-- (void)enterMainController{
-    //登录成功存沙盒
-    [[UserInfo sharedUserInfo] saveUserInfoToSanbox];
-    
-    //modal出来的控制器,在跳转的时候,一定要dismiss掉 否则会引起循环引用
-    [self dismissViewControllerAnimated:NO completion:nil];
-    
-    // 登录成功来到主界面
-    // 此方法是在子线程补调用，所以在主线程刷新UI
-    UIStoryboard *mainStroy = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.view.window.rootViewController = mainStroy.instantiateInitialViewController;
 }
 
 /**
