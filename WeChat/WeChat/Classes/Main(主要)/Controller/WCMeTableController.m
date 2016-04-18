@@ -27,6 +27,7 @@
 }
 
 - (void)logoutBtnClick{
+    
     AppDelegate *app = [UIApplication sharedApplication].delegate;
     
     [app XMPPLogout];

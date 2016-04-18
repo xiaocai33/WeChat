@@ -9,6 +9,7 @@
 #import "UserInfo.h"
 #define userKey @"user"
 #define pwdKey @"pwd"
+#define login @"isLogin"
 
 @implementation UserInfo
 
@@ -19,6 +20,7 @@ SingletonM(UserInfo)
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:self.user forKey:userKey];
     [userDefaults setObject:self.pwd forKey:pwdKey];
+    [userDefaults setBool:self.isLogin forKey:login];
     [userDefaults synchronize];
 }
 
@@ -27,6 +29,7 @@ SingletonM(UserInfo)
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.user = [userDefaults objectForKey:userKey];
     self.pwd = [userDefaults objectForKey:pwdKey];
+    self.isLogin = [userDefaults boolForKey:login];
 }
 
 @end

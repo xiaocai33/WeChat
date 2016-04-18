@@ -72,7 +72,11 @@
  */
 - (void)enterMainController{
     //登录成功存沙盒
-    [[UserInfo sharedUserInfo] saveUserInfoToSanbox];
+    UserInfo *user = [UserInfo sharedUserInfo];
+    // 更改用户的登录状态为YES
+    user.isLogin = YES;
+    //登录成功存沙盒
+    [user saveUserInfoToSanbox];
     
     //modal出来的控制器,在跳转的时候,一定要dismiss掉 否则会引起循环引用
     [self dismissViewControllerAnimated:NO completion:nil];

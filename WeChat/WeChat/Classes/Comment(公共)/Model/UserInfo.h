@@ -18,6 +18,11 @@ SingletonH(UserInfo)
 /** 密码 */
 @property (nonatomic, copy) NSString *pwd;
 
+/**
+ *  登录的状态 YES 登录过/NO 注销
+ */
+@property (nonatomic, assign) BOOL isLogin;
+
 /** 保存用户数据到沙盒 */
 -(void)saveUserInfoToSanbox;
 

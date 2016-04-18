@@ -46,7 +46,17 @@
     [WCNavigationController setupNav];
     
     //从沙盒中加载数据到单例中
-    [[UserInfo sharedUserInfo] loadUserInfoFromSanbox];
+    UserInfo *user = [UserInfo sharedUserInfo];
+    [user loadUserInfoFromSanbox];
+    
+    //判断当前的登录状态 YES的话直接跳转到主界面
+    if (user.isLogin) {
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = story.instantiateInitialViewController;
+        
+        // 自动登录服务
+        [self XMPPLogin:nil];
+    }
     
     //设置状态栏颜色
     //[application setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -179,10 +189,13 @@
     
     // 3. 回到登录界面
     //跳转控制器
-    //dispatch_async(dispatch_get_main_queue(), ^{
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-        self.window.rootViewController = storyboard.instantiateInitialViewController;
-    //});
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    self.window.rootViewController = storyboard.instantiateInitialViewController;
+    
+    //4.更新用户的登录状态
+    UserInfo *user = [UserInfo sharedUserInfo];
+    user.isLogin = NO;
+    [user saveUserInfoToSanbox];
 }
 
 #pragma make - 开始登陆
