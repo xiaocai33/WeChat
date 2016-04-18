@@ -89,7 +89,13 @@
 //    NSString *name = [defaults objectForKey:@"name"];
     
     //从单例中获取用户名
-    NSString *name = [UserInfo sharedUserInfo].user;
+    NSString *name = nil;
+    
+    if (self.registerStatus) {//注册的环境下,发送注册的名字
+        name = [UserInfo sharedUserInfo].registerName;
+    }else{
+        name = [UserInfo sharedUserInfo].user;
+    }
     
     XMPPJID *myJID = [XMPPJID jidWithUser:name domain:@"xiaocai.local" resource:@"iphone"];
     _stream.myJID = myJID;
@@ -139,8 +145,14 @@
 - (void)xmppStreamDidConnect:(XMPPStream *)sender{
     WCLog(@"与主机连接成功");
     
-    //连接到服务成功后，再发送密码授权
-    [self sendPwdToHost];
+    //连接到服务成功后,判断当前的环境
+    if (self.registerStatus) {
+        NSString *registerPwd = [UserInfo sharedUserInfo].registerPwd;
+        [_stream registerWithPassword:registerPwd error:nil];
+    }else{
+        //连接到服务成功后，再发送密码授权
+        [self sendPwdToHost];
+    }
 }
 
 #pragma mark - 与主机断开连接
@@ -152,8 +164,6 @@
     if (error && _resultBlock) {
         _resultBlock(resultBlockTypeNetOut);
     }
-   
-    
 }
 
 #pragma mark - 授权成功
@@ -174,6 +184,21 @@
     
     if (_resultBlock) {
         _resultBlock(resultBlockTypeFailed);
+    }
+}
+
+#pragma mark - 注册成功
+- (void)xmppStreamDidRegister:(XMPPStream *)sender{
+    WCLog(@"注册成功");
+    if (_resultBlock) {
+        _resultBlock(resultBlockTypeRegisterSuccess);
+    }
+}
+#pragma mark - 注册失败
+- (void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error{
+    WCLog(@"注册失败--%@", error);
+    if (_resultBlock) {
+        _resultBlock(resultBlockTypeRegisterFailed);
     }
 }
 
@@ -209,6 +234,18 @@
     //连接服务器
     [self connectToHost];
     
+}
+
+#pragma make - 开始注册
+- (void)XMPPRegister:(resultBlock)resultBlock{
+    _resultBlock = resultBlock;
+    
+    //每次登录的时候,断开上一次的登录
+    //否则有:Error Domain=XMPPStreamErrorDomain Code=1 "Attempting to connect while already connected or connecting." UserInfo={NSLocalizedDescription=Attempting to connect while already connected or connecting.}
+    [_stream disconnect];
+    
+    //连接服务器
+    [self connectToHost];
 }
 
 

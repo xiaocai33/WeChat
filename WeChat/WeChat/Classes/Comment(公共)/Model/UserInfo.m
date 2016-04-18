@@ -10,6 +10,8 @@
 #define userKey @"user"
 #define pwdKey @"pwd"
 #define login @"isLogin"
+#define registerNa @"registerNa"
+#define registerPw @"registerPw"
 
 @implementation UserInfo
 
@@ -21,6 +23,8 @@ SingletonM(UserInfo)
     [userDefaults setObject:self.user forKey:userKey];
     [userDefaults setObject:self.pwd forKey:pwdKey];
     [userDefaults setBool:self.isLogin forKey:login];
+    [userDefaults setObject:self.registerName forKey:registerNa];
+    [userDefaults setObject:self.registerPwd forKey:registerPw];
     [userDefaults synchronize];
 }
 
@@ -30,6 +34,8 @@ SingletonM(UserInfo)
     self.user = [userDefaults objectForKey:userKey];
     self.pwd = [userDefaults objectForKey:pwdKey];
     self.isLogin = [userDefaults boolForKey:login];
+    self.registerName = [userDefaults objectForKey:registerNa];
+    self.registerPwd = [userDefaults objectForKey:registerPw];
 }
 
 @end

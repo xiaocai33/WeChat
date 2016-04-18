@@ -31,6 +31,7 @@
     
     AppDelegate *app = [UIApplication sharedApplication].delegate;
     
+    app.registerStatus = NO;
     //防止循环引用
     __weak typeof(self) weakSelf = self;
     [app XMPPLogin:^(resultBlockType type) {

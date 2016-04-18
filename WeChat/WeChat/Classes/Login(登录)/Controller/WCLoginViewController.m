@@ -7,8 +7,10 @@
 //
 
 #import "WCLoginViewController.h"
+#import "WCNavigationController.h"
+#import "WCRegisterViewController.h"
 
-@interface WCLoginViewController ()
+@interface WCLoginViewController () <WCRegisterViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
@@ -48,6 +50,25 @@
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    // 获取注册控制器
+    UINavigationController *nav = segue.destinationViewController;
+    
+    if ([nav.topViewController isKindOfClass:[WCRegisterViewController class]]) {
+        WCRegisterViewController *registerVc = (WCRegisterViewController *)nav.topViewController;
+        registerVc.delegate = self;
+    }
+}
+
+#pragma mark - WCRegisterViewControllerDelegate
+- (void)registerViewControllerDidFinishRegister{
+    WCLog(@"完成注册");
+    // 完成注册 nameLabel显示注册的用户名
+    self.nameLabel.text = [UserInfo sharedUserInfo].registerName;
+    
+    // 提示
+    [MBProgressHUD showSuccess:@"请重新输入密码进行登录" toView:self.view];
+}
 
 
 @end

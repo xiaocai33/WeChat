@@ -22,6 +22,7 @@
 		3394087A1CC4F6B300999DA6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 339408791CC4F6B300999DA6 /* UserInfo.m */; };
 		3394087E1CC4FD0A00999DA6 /* WCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394087D1CC4FD0A00999DA6 /* WCLoginViewController.m */; };
 		339408811CC4FF9200999DA6 /* WCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339408801CC4FF9200999DA6 /* WCBaseViewController.m */; };
+		339408841CC5078300999DA6 /* WCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339408831CC5078300999DA6 /* WCRegisterViewController.m */; };
 		33FA18281CBF52C3005A9933 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA18271CBF52C3005A9933 /* main.m */; };
 		33FA182E1CBF52C3005A9933 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA182D1CBF52C3005A9933 /* ViewController.m */; };
 		33FA18331CBF52C3005A9933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33FA18321CBF52C3005A9933 /* Assets.xcassets */; };
@@ -212,6 +213,8 @@
 		3394087D1CC4FD0A00999DA6 /* WCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCLoginViewController.m; sourceTree = "<group>"; };
 		3394087F1CC4FF9200999DA6 /* WCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseViewController.h; sourceTree = "<group>"; };
 		339408801CC4FF9200999DA6 /* WCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseViewController.m; sourceTree = "<group>"; };
+		339408821CC5078300999DA6 /* WCRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCRegisterViewController.h; sourceTree = "<group>"; };
+		339408831CC5078300999DA6 /* WCRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCRegisterViewController.m; sourceTree = "<group>"; };
 		33FA18231CBF52C3005A9933 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FA18271CBF52C3005A9933 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33FA182C1CBF52C3005A9933 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -536,6 +539,8 @@
 				3394087D1CC4FD0A00999DA6 /* WCLoginViewController.m */,
 				3394087F1CC4FF9200999DA6 /* WCBaseViewController.h */,
 				339408801CC4FF9200999DA6 /* WCBaseViewController.m */,
+				339408821CC5078300999DA6 /* WCRegisterViewController.h */,
+				339408831CC5078300999DA6 /* WCRegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1730,6 +1735,7 @@
 				333D6D7E1CBFCA5D0070E969 /* UIView+WF.m in Sources */,
 				33FA1BE71CBF574A005A9933 /* XMPPAttentionModule.m in Sources */,
 				33FA1B901CBF574A005A9933 /* XMPPModule.m in Sources */,
+				339408841CC5078300999DA6 /* WCRegisterViewController.m in Sources */,
 				33FA1BCA1CBF574A005A9933 /* XMPPMessage+XEP_0066.m in Sources */,
 				33FA1BFC1CBF574A005A9933 /* NSString+DDXML.m in Sources */,
 				33FA1B991CBF574A005A9933 /* XMPPGroupCoreDataStorageObject.m in Sources */,
