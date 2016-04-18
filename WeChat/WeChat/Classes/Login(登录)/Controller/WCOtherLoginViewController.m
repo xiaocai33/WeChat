@@ -9,6 +9,7 @@
 #import "WCOtherLoginViewController.h"
 #import "AppDelegate.h"
 
+
 @interface WCOtherLoginViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
 
@@ -51,9 +52,9 @@
      */
     
     //1.把用户名和密码放在沙盒
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.nameText.text forKey:@"name"];
-    [defaults setObject:self.pwdText.text forKey:@"pwd"];
+    UserInfo *userInfo = [UserInfo sharedUserInfo];
+    userInfo.user = self.nameText.text;
+    userInfo.pwd = self.pwdText.text;
 
     //提示用户正在登录
     [MBProgressHUD showMessage:@"正在登录..." toView:self.view];
@@ -99,7 +100,10 @@
  *  跳转到主控制器
  */
 - (void)enterMainController{
-    //modal出来的控制器,在跳转的时候,一定要注销掉 否则会引起循环引用
+    //登录成功存沙盒
+    [[UserInfo sharedUserInfo] saveUserInfoToSanbox];
+    
+    //modal出来的控制器,在跳转的时候,一定要dismiss掉 否则会引起循环引用
     [self dismissViewControllerAnimated:NO completion:nil];
     
     // 登录成功来到主界面
@@ -118,5 +122,32 @@
 - (void)dealloc{
     WCLog(@"%s", __func__);
 }
+
+//- (IBAction)loginWeChat {
+//    /*
+//     * 官方的登录实现
+//     
+//     * 1.把用户名和密码放在沙盒
+//     
+//     
+//     * 2.调用 AppDelegate的一个login 连接服务并登录
+//     */
+//    
+//    //1.把用户名和密码放在沙盒
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults setObject:self.nameText.text forKey:@"name"];
+//    [defaults setObject:self.pwdText.text forKey:@"pwd"];
+//    
+//    //提示用户正在登录
+//    [MBProgressHUD showMessage:@"正在登录..." toView:self.view];
+//    
+//    AppDelegate *app = [UIApplication sharedApplication].delegate;
+//    
+//    //防止循环引用
+//    __weak typeof(self) weakSelf = self;
+//    [app XMPPLogin:^(resultBlockType type) {
+//        [weakSelf handWithResultType:type];
+//    }];
+//}
 
 @end

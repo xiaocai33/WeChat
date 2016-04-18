@@ -45,6 +45,9 @@
     //设置所有导航控制器的样式
     [WCNavigationController setupNav];
     
+    //从沙盒中加载数据到单例中
+    [[UserInfo sharedUserInfo] loadUserInfoFromSanbox];
+    
     //设置状态栏颜色
     //[application setStatusBarStyle:UIStatusBarStyleLightContent];
     
@@ -72,8 +75,11 @@
     // 设置登录用户JID
     //resource 标识用户登录的客户端 iphone android
     //从沙盒取出用户名
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *name = [defaults objectForKey:@"name"];
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSString *name = [defaults objectForKey:@"name"];
+    
+    //从单例中获取用户名
+    NSString *name = [UserInfo sharedUserInfo].user;
     
     XMPPJID *myJID = [XMPPJID jidWithUser:name domain:@"xiaocai.local" resource:@"iphone"];
     _stream.myJID = myJID;
@@ -95,9 +101,12 @@
 #pragma mark - 发送密码授权
 - (void)sendPwdToHost{
     WCLog(@"再发送密码授权");
-    //从沙盒取出密码
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *pwd = [defaults objectForKey:@"pwd"];
+//    //从沙盒取出密码
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSString *pwd = [defaults objectForKey:@"pwd"];
+    
+    //从单例取出密码
+    NSString *pwd = [UserInfo sharedUserInfo].pwd;
     
     NSError *err = nil;
     [_stream authenticateWithPassword:pwd error:&err];
