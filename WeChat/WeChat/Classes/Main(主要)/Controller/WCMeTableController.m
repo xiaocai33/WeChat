@@ -10,6 +10,12 @@
 #import "AppDelegate.h"
 
 @interface WCMeTableController ()
+/** 用户头像 */
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+/** 用户昵称 */
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+/** 用户账号 */
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 
 @end
 
@@ -18,12 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     UIBarButtonItem *logoutBtn = [[UIBarButtonItem alloc] initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(logoutBtnClick)];
     self.navigationItem.rightBarButtonItem = logoutBtn;
+    
+    self.phoneLabel.text = [UserInfo sharedUserInfo].user;
+    
 }
 
 - (void)logoutBtnClick{
@@ -40,15 +45,15 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
+//    return 0;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
