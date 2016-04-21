@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
+#import "XMPPFramework.h"
 typedef enum{
     resultBlockTypeSuccess = 0,//登录成功
     resultBlockTypeFailed,//登录失败
@@ -24,6 +25,9 @@ SingletonH(XMPPTool);
  *  当前的操作  注册or登录
  */
 @property (nonatomic, assign, getter=isRegister) BOOL registerStatus;
+
+/** 电子名片模块 */
+@property (nonatomic, strong) XMPPvCardTempModule *vCardModule;
 
 /**
  *  退出登录

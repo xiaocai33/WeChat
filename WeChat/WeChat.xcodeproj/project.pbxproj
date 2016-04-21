@@ -850,14 +850,14 @@
 				33FA1A661CBF5749005A9933 /* CoreDataStorage */,
 				33FA1A6A1CBF5749005A9933 /* GoogleSharedStatus */,
 				33FA1A6D1CBF5749005A9933 /* ProcessOne */,
-				33FA1A701CBF5749005A9933 /* Reconnect */,
-				33FA1A731CBF5749005A9933 /* Roster */,
+				33FA1A701CBF5749005A9933 /* Reconnect[自动连接模块] */,
+				33FA1A731CBF5749005A9933 /* Roster[花名册模块好友列表] */,
 				33FA1A8B1CBF5749005A9933 /* SystemInputActivityMonitor */,
 				33FA1A8E1CBF5749005A9933 /* XEP-0009 */,
 				33FA1A951CBF5749005A9933 /* XEP-0012 */,
 				33FA1A9A1CBF5749005A9933 /* XEP-0016 */,
 				33FA1A9D1CBF5749005A9933 /* XEP-0045 */,
-				33FA1AC11CBF5749005A9933 /* XEP-0054 */,
+				33FA1AC11CBF5749005A9933 /* XEP-0054[电子名片模块] */,
 				33FA1ADD1CBF5749005A9933 /* XEP-0059 */,
 				33FA1AE21CBF5749005A9933 /* XEP-0060 */,
 				33FA1AE71CBF5749005A9933 /* XEP-0065 */,
@@ -923,16 +923,17 @@
 			path = ProcessOne;
 			sourceTree = "<group>";
 		};
-		33FA1A701CBF5749005A9933 /* Reconnect */ = {
+		33FA1A701CBF5749005A9933 /* Reconnect[自动连接模块] */ = {
 			isa = PBXGroup;
 			children = (
 				33FA1A711CBF5749005A9933 /* XMPPReconnect.h */,
 				33FA1A721CBF5749005A9933 /* XMPPReconnect.m */,
 			);
+			name = "Reconnect[自动连接模块]";
 			path = Reconnect;
 			sourceTree = "<group>";
 		};
-		33FA1A731CBF5749005A9933 /* Roster */ = {
+		33FA1A731CBF5749005A9933 /* Roster[花名册模块好友列表] */ = {
 			isa = PBXGroup;
 			children = (
 				33FA1A741CBF5749005A9933 /* CoreDataStorage */,
@@ -943,6 +944,7 @@
 				33FA1A891CBF5749005A9933 /* XMPPRosterPrivate.h */,
 				33FA1A8A1CBF5749005A9933 /* XMPPUser.h */,
 			);
+			name = "Roster[花名册模块好友列表]";
 			path = Roster;
 			sourceTree = "<group>";
 		};
@@ -1079,7 +1081,7 @@
 			path = MemoryStorage;
 			sourceTree = "<group>";
 		};
-		33FA1AC11CBF5749005A9933 /* XEP-0054 */ = {
+		33FA1AC11CBF5749005A9933 /* XEP-0054[电子名片模块] */ = {
 			isa = PBXGroup;
 			children = (
 				33FA1AC21CBF5749005A9933 /* CoreDataStorage */,
@@ -1100,6 +1102,7 @@
 				33FA1ADB1CBF5749005A9933 /* XMPPvCardTempTel.h */,
 				33FA1ADC1CBF5749005A9933 /* XMPPvCardTempTel.m */,
 			);
+			name = "XEP-0054[电子名片模块]";
 			path = "XEP-0054";
 			sourceTree = "<group>";
 		};
