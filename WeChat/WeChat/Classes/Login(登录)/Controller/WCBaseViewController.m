@@ -29,12 +29,12 @@
     //提示用户正在登录
     [MBProgressHUD showMessage:@"正在登录..." toView:self.view];
     
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    XMPPTool *tool = [XMPPTool sharedXMPPTool];
     
-    app.registerStatus = NO;
+    tool.registerStatus = NO;
     //防止循环引用
     __weak typeof(self) weakSelf = self;
-    [app XMPPLogin:^(resultBlockType type) {
+    [tool XMPPLogin:^(resultBlockType type) {
         [weakSelf handWithResultType:type];
     }];
 

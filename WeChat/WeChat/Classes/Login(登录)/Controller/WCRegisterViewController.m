@@ -56,14 +56,14 @@
     user.registerName = self.nameText.text;
     user.registerPwd = self.pwdText.text;
     
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    app.registerStatus = YES;
+    XMPPTool *tool = [XMPPTool sharedXMPPTool];
+    tool.registerStatus = YES;
     
     //添加蒙版
     [MBProgressHUD showMessage:@"正在注册..." toView:self.view];
     
     __weak typeof(self) weakSelf = self;
-    [app XMPPRegister:^(resultBlockType type) {
+    [tool XMPPRegister:^(resultBlockType type) {
         [weakSelf handWithResultType:type];
     }];
     

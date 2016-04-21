@@ -28,9 +28,9 @@
 
 - (void)logoutBtnClick{
     
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    XMPPTool *tool = [XMPPTool sharedXMPPTool];
     
-    [app XMPPLogout];
+    [tool XMPPLogout];
 }
 
 - (void)didReceiveMemoryWarning {
