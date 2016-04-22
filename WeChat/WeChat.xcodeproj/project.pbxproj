@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3317B0E91CC9DF58003B5E1C /* WCDetailMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3317B0E81CC9DF58003B5E1C /* WCDetailMeTableViewController.m */; };
 		333D6D6A1CBFC9620070E969 /* WCOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D691CBFC9620070E969 /* WCOtherLoginViewController.m */; };
 		333D6D851CBFCDAE0070E969 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D811CBFCDAD0070E969 /* MBProgressHUD+HM.m */; };
 		333D6D861CBFCDAE0070E969 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 333D6D821CBFCDAD0070E969 /* MBProgressHUD.bundle */; };
@@ -183,6 +184,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3317B0E71CC9DF58003B5E1C /* WCDetailMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCDetailMeTableViewController.h; sourceTree = "<group>"; };
+		3317B0E81CC9DF58003B5E1C /* WCDetailMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCDetailMeTableViewController.m; sourceTree = "<group>"; };
 		333D6D681CBFC9620070E969 /* WCOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCOtherLoginViewController.h; sourceTree = "<group>"; };
 		333D6D691CBFC9620070E969 /* WCOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCOtherLoginViewController.m; sourceTree = "<group>"; };
 		333D6D6C1CBFCA5D0070E969 /* CategoryWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryWF.h; sourceTree = "<group>"; };
@@ -622,6 +625,8 @@
 			children = (
 				333D6D901CBFDE770070E969 /* WCMeTableController.h */,
 				333D6D911CBFDE770070E969 /* WCMeTableController.m */,
+				3317B0E71CC9DF58003B5E1C /* WCDetailMeTableViewController.h */,
+				3317B0E81CC9DF58003B5E1C /* WCDetailMeTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1709,6 +1714,7 @@
 				33FA1B9C1CBF574A005A9933 /* XMPPRosterCoreDataStorage.m in Sources */,
 				33FA1BB11CBF574A005A9933 /* XMPPRoomMemoryStorage.m in Sources */,
 				33FA1BA71CBF574A005A9933 /* XMPPLastActivity.m in Sources */,
+				3317B0E91CC9DF58003B5E1C /* WCDetailMeTableViewController.m in Sources */,
 				3394087A1CC4F6B300999DA6 /* UserInfo.m in Sources */,
 				33FA1BFF1CBF574A005A9933 /* DDXMLNode.m in Sources */,
 				33FA1BAF1CBF574A005A9933 /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
