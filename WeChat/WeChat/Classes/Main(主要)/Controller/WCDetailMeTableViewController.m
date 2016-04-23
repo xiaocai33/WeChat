@@ -9,7 +9,7 @@
 #import "WCDetailMeTableViewController.h"
 #import "XMPPvCardTemp.h"
 
-@interface WCDetailMeTableViewController ()
+@interface WCDetailMeTableViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /** 头像 */
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 /** 昵称 */
@@ -63,10 +63,59 @@
     //邮件
     // 用mailer充当邮件
     self.emailLabel.text = myVCard.mailer;
+}
+#pragma mark - UITableViewDelegate代理方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //获取单元cell
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-
+    if (cell.tag == 2) {
+        NSLog(@"不做处理");
+        return;
+    }else if (cell.tag == 0){
+        NSLog(@"换头像");
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"照相" otherButtonTitles:@"相册", nil];
+        [sheet showInView:self.view];
+        
+    }else if (cell.tag == 1){
+        NSLog(@"切换控制器");
+        [self performSegueWithIdentifier:@"EditedSegue" sender:nil];
+    }
 }
 
+#pragma mark - UIActionSheetDelegate代理方法
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==2) {
+        return;
+    }
+    
+    UIImagePickerController *pickController = [[UIImagePickerController alloc] init];
+    
+    // 设置代理
+    pickController.delegate =self;
+    
+    // 设置允许编辑
+    pickController.allowsEditing = YES;
+    
+    if (buttonIndex==0) {//照相
+        pickController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }else{
+        pickController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+     // 显示图片选择器
+    [self presentViewController:pickController animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerController代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    // 获取图片,摄住图片
+    self.headImageView.image = info[UIImagePickerControllerEditedImage];
+    
+    // 隐藏当前模态窗口
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

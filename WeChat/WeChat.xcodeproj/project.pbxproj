@@ -14,6 +14,7 @@
 		333D6D871CBFCDAE0070E969 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D841CBFCDAE0070E969 /* MBProgressHUD.m */; };
 		333D6D8E1CBFD9A80070E969 /* WCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D8D1CBFD9A80070E969 /* WCNavigationController.m */; };
 		333D6D921CBFDE770070E969 /* WCMeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D911CBFDE770070E969 /* WCMeTableController.m */; };
+		335B636A1CCB98B100FEDC6A /* WCEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335B63691CCB98B100FEDC6A /* WCEditTableViewController.m */; };
 		3364D5E11CC8E93600ED8D9F /* XMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3364D5E01CC8E93600ED8D9F /* XMPPTool.m */; };
 		3394087A1CC4F6B300999DA6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 339408791CC4F6B300999DA6 /* UserInfo.m */; };
 		3394087E1CC4FD0A00999DA6 /* WCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394087D1CC4FD0A00999DA6 /* WCLoginViewController.m */; };
@@ -198,6 +199,8 @@
 		333D6D8D1CBFD9A80070E969 /* WCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCNavigationController.m; sourceTree = "<group>"; };
 		333D6D901CBFDE770070E969 /* WCMeTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMeTableController.h; sourceTree = "<group>"; };
 		333D6D911CBFDE770070E969 /* WCMeTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMeTableController.m; sourceTree = "<group>"; };
+		335B63681CCB98B100FEDC6A /* WCEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCEditTableViewController.h; sourceTree = "<group>"; };
+		335B63691CCB98B100FEDC6A /* WCEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCEditTableViewController.m; sourceTree = "<group>"; };
 		3364D5DF1CC8E93600ED8D9F /* XMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMPPTool.h; path = ../../Others/XMPPTool.h; sourceTree = "<group>"; };
 		3364D5E01CC8E93600ED8D9F /* XMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMPPTool.m; path = ../../Others/XMPPTool.m; sourceTree = "<group>"; };
 		339408781CC4F6B300999DA6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
@@ -627,6 +630,8 @@
 				333D6D911CBFDE770070E969 /* WCMeTableController.m */,
 				3317B0E71CC9DF58003B5E1C /* WCDetailMeTableViewController.h */,
 				3317B0E81CC9DF58003B5E1C /* WCDetailMeTableViewController.m */,
+				335B63681CCB98B100FEDC6A /* WCEditTableViewController.h */,
+				335B63691CCB98B100FEDC6A /* WCEditTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1724,6 +1729,7 @@
 				33FA1BA61CBF574A005A9933 /* XMPPIQ+LastActivity.m in Sources */,
 				33FA1BFE1CBF574A005A9933 /* DDXMLElement.m in Sources */,
 				33FA1BAE1CBF574A005A9933 /* XMPPRoomHybridStorage.m in Sources */,
+				335B636A1CCB98B100FEDC6A /* WCEditTableViewController.m in Sources */,
 				33FA1B891CBF574A005A9933 /* NSData+XMPP.m in Sources */,
 				33FA1BEB1CBF574A005A9933 /* XMPPMessage+XEP_0333.m in Sources */,
 				33FA1B851CBF574A005A9933 /* XMPPDigestMD5Authentication.m in Sources */,

@@ -219,7 +219,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhH-Kh-Ko2">
                                                     <rect key="frame" x="21" y="22" width="34" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Ter-1z-FXm"/>
+                                                        <constraint firstAttribute="width" constant="34" id="oGi-qv-Z9t"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -227,10 +227,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zhH-Kh-Ko2" firstAttribute="leading" secondItem="1H6-Cc-Z3F" secondAttribute="leadingMargin" constant="13" id="8us-hn-CVB"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zhH-Kh-Ko2" secondAttribute="bottom" constant="15" id="Buv-pM-aqi"/>
                                                 <constraint firstItem="OGf-Kg-NlT" firstAttribute="trailing" secondItem="1H6-Cc-Z3F" secondAttribute="trailingMargin" constant="10" id="C6s-Sc-Jip"/>
-                                                <constraint firstItem="zhH-Kh-Ko2" firstAttribute="top" secondItem="1H6-Cc-Z3F" secondAttribute="topMargin" constant="14" id="J48-1F-juX"/>
+                                                <constraint firstItem="zhH-Kh-Ko2" firstAttribute="leading" secondItem="1H6-Cc-Z3F" secondAttribute="leadingMargin" constant="13" id="FBO-OW-OTo"/>
+                                                <constraint firstItem="zhH-Kh-Ko2" firstAttribute="top" secondItem="1H6-Cc-Z3F" secondAttribute="topMargin" constant="14" id="HZM-Ff-5Fu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zhH-Kh-Ko2" secondAttribute="bottom" constant="15" id="dSZ-ab-Mqy"/>
                                                 <constraint firstItem="OGf-Kg-NlT" firstAttribute="top" secondItem="1H6-Cc-Z3F" secondAttribute="topMargin" constant="5" id="uXj-9j-JvZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -424,11 +424,57 @@
                         <outlet property="phoneLabel" destination="VBt-QW-afD" id="C08-TU-zWm"/>
                         <outlet property="titleLabel" destination="Ena-L5-vsa" id="IYH-uP-lG5"/>
                         <outlet property="weixinNum" destination="rkG-a6-VhA" id="WEC-nE-5A9"/>
+                        <segue destination="Do1-LQ-qhF" kind="show" identifier="EditedSegue" id="Jn5-g8-K6Q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8KQ-JZ-vEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1026" y="1728"/>
+        </scene>
+        <!--编辑View-->
+        <scene sceneID="vTg-SW-GcY">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Do1-LQ-qhF" userLabel="编辑View" customClass="WCEditTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hQs-rO-L4g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="RdM-05-1mI">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="CVp-0x-eat" style="IBUITableViewCellStyleDefault" id="I1P-Kz-PPl">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I1P-Kz-PPl" id="fIl-1e-z7F">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CVp-0x-eat">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Do1-LQ-qhF" id="5pN-QT-l35"/>
+                            <outlet property="delegate" destination="Do1-LQ-qhF" id="7IU-o3-cv2"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="nameLabel" destination="CVp-0x-eat" id="8vg-bL-pz3"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cjL-pk-q6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="1728"/>
         </scene>
         <!--我-->
         <scene sceneID="etw-ap-V2a">
