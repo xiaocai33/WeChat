@@ -26,6 +26,7 @@
 		339408931CC5249200999DA6 /* UIStoryboard+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 339408921CC5249200999DA6 /* UIStoryboard+Extension.m */; };
 		339408961CC524E400999DA6 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 339408951CC524E400999DA6 /* UITextField+Extension.m */; };
 		339408991CC525A400999DA6 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 339408981CC525A400999DA6 /* UIButton+Extension.m */; };
+		3397DC6B1CCBAB160028BFE5 /* WCTongXunTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397DC6A1CCBAB160028BFE5 /* WCTongXunTableViewController.m */; };
 		33FA18281CBF52C3005A9933 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA18271CBF52C3005A9933 /* main.m */; };
 		33FA182E1CBF52C3005A9933 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA182D1CBF52C3005A9933 /* ViewController.m */; };
 		33FA18331CBF52C3005A9933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33FA18321CBF52C3005A9933 /* Assets.xcassets */; };
@@ -224,6 +225,8 @@
 		339408951CC524E400999DA6 /* UITextField+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
 		339408971CC525A400999DA6 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
 		339408981CC525A400999DA6 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		3397DC691CCBAB150028BFE5 /* WCTongXunTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCTongXunTableViewController.h; sourceTree = "<group>"; };
+		3397DC6A1CCBAB160028BFE5 /* WCTongXunTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCTongXunTableViewController.m; sourceTree = "<group>"; };
 		33FA18231CBF52C3005A9933 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FA18271CBF52C3005A9933 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33FA182C1CBF52C3005A9933 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -632,6 +635,8 @@
 				3317B0E81CC9DF58003B5E1C /* WCDetailMeTableViewController.m */,
 				335B63681CCB98B100FEDC6A /* WCEditTableViewController.h */,
 				335B63691CCB98B100FEDC6A /* WCEditTableViewController.m */,
+				3397DC691CCBAB150028BFE5 /* WCTongXunTableViewController.h */,
+				3397DC6A1CCBAB160028BFE5 /* WCTongXunTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1812,6 +1817,7 @@
 				33FA1BF81CBF574A005A9933 /* DDTTYLogger.m in Sources */,
 				33FA1BA91CBF574A005A9933 /* XMPPRoom.xcdatamodeld in Sources */,
 				33FA1B9B1CBF574A005A9933 /* XMPPRoster.xcdatamodel in Sources */,
+				3397DC6B1CCBAB160028BFE5 /* WCTongXunTableViewController.m in Sources */,
 				33FA1BF41CBF574A005A9933 /* DDAbstractDatabaseLogger.m in Sources */,
 				33FA1BC01CBF574A005A9933 /* XMPPvCardTempEmail.m in Sources */,
 				33FA1BB41CBF574A005A9933 /* XMPPMessage+XEP0045.m in Sources */,

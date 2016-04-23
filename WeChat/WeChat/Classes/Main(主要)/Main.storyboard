@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="233" y="-655"/>
         </scene>
-        <!--Root View Controller-->
+        <!--通讯录View-->
         <scene sceneID="cZD-xU-elB">
             <objects>
-                <tableViewController id="MWZ-27-aSG" sceneMemberID="viewController">
+                <tableViewController id="MWZ-27-aSG" userLabel="通讯录View" customClass="WCTongXunTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kEB-bE-E04">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

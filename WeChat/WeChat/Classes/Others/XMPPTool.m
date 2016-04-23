@@ -27,6 +27,8 @@
     XMPPvCardAvatarModule *_vCardAvatarModule;
     //自动连接模块
     XMPPReconnect *_reconnect;
+    //花名册模块
+    XMPPRoster *_roster;
 }
 
 // 初始化XMPPStream
@@ -68,6 +70,11 @@ SingletonM(XMPPTool);
     //自动连接模块
     _reconnect = [[XMPPReconnect alloc] init];
     [_reconnect activate:_stream];
+    
+    //花名册模块
+    _rosterCoreData = [XMPPRosterCoreDataStorage sharedInstance];
+    _roster = [[XMPPRoster alloc] initWithRosterStorage:_rosterCoreData];
+    [_roster activate:_stream];
     
     //设置代理
     [_stream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];

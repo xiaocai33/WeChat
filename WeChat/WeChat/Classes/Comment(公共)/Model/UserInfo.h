@@ -23,6 +23,8 @@ SingletonH(UserInfo)
 /** 注册密码 */
 @property (nonatomic, copy) NSString *registerPwd;
 
+@property (nonatomic, copy) NSString *jid;
+
 /**
  *  登录的状态 YES 登录过/NO 注销
  */

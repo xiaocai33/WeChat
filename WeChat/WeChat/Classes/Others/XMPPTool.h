@@ -28,6 +28,8 @@ SingletonH(XMPPTool);
 
 /** 电子名片模块 */
 @property (nonatomic, strong) XMPPvCardTempModule *vCardModule;
+/** 花名册模块 */
+@property (nonatomic, strong)XMPPRosterCoreDataStorage *rosterCoreData;
 
 /**
  *  退出登录

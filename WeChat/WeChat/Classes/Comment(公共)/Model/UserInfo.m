@@ -12,6 +12,7 @@
 #define login @"isLogin"
 #define registerNa @"registerNa"
 #define registerPw @"registerPw"
+#define domain @"xiaocai.local"
 
 @implementation UserInfo
 
@@ -36,6 +37,10 @@ SingletonM(UserInfo)
     self.isLogin = [userDefaults boolForKey:login];
     self.registerName = [userDefaults objectForKey:registerNa];
     self.registerPwd = [userDefaults objectForKey:registerPw];
+}
+
+-(NSString *)jid{
+    return [NSString stringWithFormat:@"%@@%@",self.user,domain];
 }
 
 @end
