@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WCEditTableViewController;
+@protocol WCEditTableViewControllerDelegate <NSObject>
+
+- (void)editDidCommit;
+
+@end
+
 
 @interface WCEditTableViewController : UITableViewController
 
 @property (nonatomic, strong) UITableViewCell *cell;
 
+@property (nonatomic, weak) id<WCEditTableViewControllerDelegate> delegate;
 @end

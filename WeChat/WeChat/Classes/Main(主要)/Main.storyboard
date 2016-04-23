@@ -442,21 +442,25 @@
                         <sections>
                             <tableViewSection id="RdM-05-1mI">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="CVp-0x-eat" style="IBUITableViewCellStyleDefault" id="I1P-Kz-PPl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="I1P-Kz-PPl">
                                         <rect key="frame" x="0.0" y="99" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I1P-Kz-PPl" id="fIl-1e-z7F">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CVp-0x-eat">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtW-yb-3g0">
+                                                    <rect key="frame" x="10" y="8" width="580" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZtW-yb-3g0" secondAttribute="trailing" constant="2" id="Gsl-Ct-abV"/>
+                                                <constraint firstItem="ZtW-yb-3g0" firstAttribute="leading" secondItem="fIl-1e-z7F" secondAttribute="leadingMargin" constant="2" id="HpE-Ek-60k"/>
+                                                <constraint firstItem="ZtW-yb-3g0" firstAttribute="top" secondItem="fIl-1e-z7F" secondAttribute="topMargin" id="axV-gy-0Tw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZtW-yb-3g0" secondAttribute="bottom" id="vP7-gN-rLl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -469,7 +473,7 @@
                     </tableView>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="nameLabel" destination="CVp-0x-eat" id="8vg-bL-pz3"/>
+                        <outlet property="nameTextField" destination="ZtW-yb-3g0" id="9Wz-kY-5Uk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjL-pk-q6o" userLabel="First Responder" sceneMemberID="firstResponder"/>

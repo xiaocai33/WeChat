@@ -8,8 +8,9 @@
 
 #import "WCDetailMeTableViewController.h"
 #import "XMPPvCardTemp.h"
+#import "WCEditTableViewController.h"
 
-@interface WCDetailMeTableViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface WCDetailMeTableViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate, WCEditTableViewControllerDelegate>
 /** 头像 */
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 /** 昵称 */
@@ -79,7 +80,7 @@
         
     }else if (cell.tag == 1){
         NSLog(@"切换控制器");
-        [self performSegueWithIdentifier:@"EditedSegue" sender:nil];
+        [self performSegueWithIdentifier:@"EditedSegue" sender:cell];
     }
 }
 
@@ -115,7 +116,49 @@
     
     // 隐藏当前模态窗口
     [self dismissViewControllerAnimated:YES completion:nil];
+//    //提交到服务器
+//    XMPPvCardTemp *myVCard = [XMPPTool sharedXMPPTool].vCardModule.myvCardTemp;
+//    //头像
+//    myVCard.photo = UIImagePNGRepresentation(self.headImageView.image);
+//    //提交到服务器
+//    [[XMPPTool sharedXMPPTool].vCardModule updateMyvCardTemp:myVCard];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    id presentVc = segue.destinationViewController;
+    if ([presentVc isKindOfClass:[WCEditTableViewController class]]) {
+        WCEditTableViewController *editVc = (WCEditTableViewController *)presentVc;
+        editVc.cell = sender;
+        editVc.delegate = self;
+    }
+}
+
+#pragma mark - WCEditTableViewController代理方法
+- (void)editDidCommit{
+    XMPPvCardTemp *myVCard = [XMPPTool sharedXMPPTool].vCardModule.myvCardTemp;
+    //头像
+    myVCard.photo = UIImagePNGRepresentation(self.headImageView.image);
+    //昵称
+    myVCard.nickname = self.nikeNameLabel.text;
+    //公司
+    myVCard.orgName = self.companyLabel.text;
+    //部门
+    if (self.orgunitLabel.text.length >0) {
+        myVCard.orgUnits = @[self.orgunitLabel.text];
+    }
+    //职位
+    myVCard.title = self.titleLabel.text;
+    
+    //电话
+    myVCard.note = self.phoneLabel.text;
+    //邮件
+    myVCard.mailer = self.emailLabel.text;
+    
+    //提交到服务器
+    [[XMPPTool sharedXMPPTool].vCardModule updateMyvCardTemp:myVCard];
+    
+}
+
 
 
 
