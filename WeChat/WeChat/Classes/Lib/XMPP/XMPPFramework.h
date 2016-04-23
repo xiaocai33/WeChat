@@ -29,6 +29,8 @@
 #import "XMPPvCardCoreDataStorage.h"
 //用户头像
 #import "XMPPvCardAvatarModule.h"
+//自动连接模块
+#import "XMPPReconnect.h"
 
 // List the modules you're using here:
 // (the following may not be a complete list)

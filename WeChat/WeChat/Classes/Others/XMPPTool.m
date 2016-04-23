@@ -25,6 +25,8 @@
     XMPPvCardCoreDataStorage *_vCardCoreData;
     /** 电子名片头像模块 */
     XMPPvCardAvatarModule *_vCardAvatarModule;
+    //自动连接模块
+    XMPPReconnect *_reconnect;
 }
 
 // 初始化XMPPStream
@@ -62,6 +64,10 @@ SingletonM(XMPPTool);
     //创建头像模块并激活
     _vCardAvatarModule = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCardModule];
     [_vCardAvatarModule activate:_stream];
+    
+    //自动连接模块
+    _reconnect = [[XMPPReconnect alloc] init];
+    [_reconnect activate:_stream];
     
     //设置代理
     [_stream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
