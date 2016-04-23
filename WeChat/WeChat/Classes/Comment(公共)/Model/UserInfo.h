@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
-
+static NSString *domain = @"xiaocai.local";
 @interface UserInfo : NSObject
 /** 单例 */
 SingletonH(UserInfo)

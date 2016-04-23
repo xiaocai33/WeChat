@@ -12,7 +12,7 @@
 #define login @"isLogin"
 #define registerNa @"registerNa"
 #define registerPw @"registerPw"
-#define domain @"xiaocai.local"
+
 
 @implementation UserInfo
 

@@ -78,11 +78,70 @@
                             <outlet property="delegate" destination="MWZ-27-aSG" id="pQo-76-ASw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="HLj-Fz-xRg"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="HLj-Fz-xRg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="gaZ-fl-VUj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Teh-WM-0N7">
+                                <rect key="frame" x="550" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="contacts_add_friend"/>
+                                <connections>
+                                    <segue destination="sEr-Ya-B3A" kind="show" id="Cds-Kn-NcM"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBM-d0-Znt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="184" y="185"/>
+        </scene>
+        <!--查找添加好友View-->
+        <scene sceneID="1kN-Lo-5T6">
+            <objects>
+                <tableViewController id="sEr-Ya-B3A" userLabel="查找添加好友View" customClass="WCAddTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="68" sectionHeaderHeight="18" sectionFooterHeight="18" id="zeE-9e-ksP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="6Vv-n0-uYN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="68" id="MV6-7l-EfY">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MV6-7l-EfY" id="wN5-aY-lAY">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入好友账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-Sy-Uur">
+                                                    <rect key="frame" x="11" y="8" width="578" height="51"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="sEr-Ya-B3A" id="XzG-tE-PQI"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hBY-Sy-Uur" secondAttribute="trailing" constant="3" id="Fu5-yh-w24"/>
+                                                <constraint firstItem="hBY-Sy-Uur" firstAttribute="leading" secondItem="wN5-aY-lAY" secondAttribute="leadingMargin" constant="3" id="P4j-Qg-Vft"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hBY-Sy-Uur" secondAttribute="bottom" id="XTB-hD-rHM"/>
+                                                <constraint firstItem="hBY-Sy-Uur" firstAttribute="top" secondItem="wN5-aY-lAY" secondAttribute="topMargin" id="zym-pT-CPf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="sEr-Ya-B3A" id="izb-tl-PZF"/>
+                            <outlet property="delegate" destination="sEr-Ya-B3A" id="dy6-in-Vi0"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ntb-PG-OG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="203"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="fn7-Wn-7Gq">
@@ -551,6 +610,7 @@
     </scenes>
     <resources>
         <image name="DefaultHead" width="46" height="46"/>
+        <image name="contacts_add_friend" width="28" height="30"/>
         <image name="tabbar_contacts" width="27" height="23"/>
         <image name="tabbar_discover" width="23" height="23"/>
         <image name="tabbar_mainframe" width="25" height="23"/>

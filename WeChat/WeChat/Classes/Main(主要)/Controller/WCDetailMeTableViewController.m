@@ -71,15 +71,15 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     if (cell.tag == 2) {
-        NSLog(@"不做处理");
+        WCLog(@"不做处理");
         return;
     }else if (cell.tag == 0){
-        NSLog(@"换头像");
+        WCLog(@"换头像");
         UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"照相" otherButtonTitles:@"相册", nil];
         [sheet showInView:self.view];
         
     }else if (cell.tag == 1){
-        NSLog(@"切换控制器");
+        WCLog(@"切换控制器");
         [self performSegueWithIdentifier:@"EditedSegue" sender:cell];
     }
 }

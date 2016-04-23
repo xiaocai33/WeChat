@@ -19,7 +19,7 @@
  */
 
 @interface XMPPTool() <XMPPStreamDelegate>{
-    XMPPStream *_stream;
+    
     resultBlock _resultBlock;
     /** 电子名片存储 */
     XMPPvCardCoreDataStorage *_vCardCoreData;
@@ -28,7 +28,7 @@
     //自动连接模块
     XMPPReconnect *_reconnect;
     //花名册模块
-    XMPPRoster *_roster;
+    
 }
 
 // 初始化XMPPStream
