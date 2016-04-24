@@ -117,6 +117,7 @@
     // 隐藏当前模态窗口
     [self dismissViewControllerAnimated:YES completion:nil];
 //    //提交到服务器
+    [self editDidCommit];
 //    XMPPvCardTemp *myVCard = [XMPPTool sharedXMPPTool].vCardModule.myvCardTemp;
 //    //头像
 //    myVCard.photo = UIImagePNGRepresentation(self.headImageView.image);
@@ -136,8 +137,10 @@
 #pragma mark - WCEditTableViewController代理方法
 - (void)editDidCommit{
     XMPPvCardTemp *myVCard = [XMPPTool sharedXMPPTool].vCardModule.myvCardTemp;
-    //头像
-    myVCard.photo = UIImagePNGRepresentation(self.headImageView.image);
+    //头像(有问题)
+//    NSData *data = UIImagePNGRepresentation(self.headImageView.image);
+//    //WCLog(@"%@", [data class]);
+//    myVCard.photo = data;
     //昵称
     myVCard.nickname = self.nikeNameLabel.text;
     //公司

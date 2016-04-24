@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3305C8511CCD0AE9009AEEAA /* WCMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305C8501CCD0AE9009AEEAA /* WCMsgViewController.m */; };
 		3317B0E91CC9DF58003B5E1C /* WCDetailMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3317B0E81CC9DF58003B5E1C /* WCDetailMeTableViewController.m */; };
 		333D6D6A1CBFC9620070E969 /* WCOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D691CBFC9620070E969 /* WCOtherLoginViewController.m */; };
 		333D6D851CBFCDAE0070E969 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D6D811CBFCDAD0070E969 /* MBProgressHUD+HM.m */; };
@@ -187,6 +188,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3305C84F1CCD0AE9009AEEAA /* WCMsgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMsgViewController.h; sourceTree = "<group>"; };
+		3305C8501CCD0AE9009AEEAA /* WCMsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMsgViewController.m; sourceTree = "<group>"; };
 		3317B0E71CC9DF58003B5E1C /* WCDetailMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCDetailMeTableViewController.h; sourceTree = "<group>"; };
 		3317B0E81CC9DF58003B5E1C /* WCDetailMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCDetailMeTableViewController.m; sourceTree = "<group>"; };
 		333D6D681CBFC9620070E969 /* WCOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCOtherLoginViewController.h; sourceTree = "<group>"; };
@@ -642,6 +645,8 @@
 				3397DC6A1CCBAB160028BFE5 /* WCTongXunTableViewController.m */,
 				3397DC6C1CCBBB750028BFE5 /* WCAddTableViewController.h */,
 				3397DC6D1CCBBB750028BFE5 /* WCAddTableViewController.m */,
+				3305C84F1CCD0AE9009AEEAA /* WCMsgViewController.h */,
+				3305C8501CCD0AE9009AEEAA /* WCMsgViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1707,6 +1712,7 @@
 				33FA1BBE1CBF574A005A9933 /* XMPPvCardTempAdrTypes.m in Sources */,
 				33FA1BE91CBF574A005A9933 /* NSXMLElement+XEP_0297.m in Sources */,
 				33FA1BE51CBF574A005A9933 /* NSXMLElement+XEP_0203.m in Sources */,
+				3305C8511CCD0AE9009AEEAA /* WCMsgViewController.m in Sources */,
 				33FA1BA51CBF574A005A9933 /* XMPPJabberRPCModule.m in Sources */,
 				33FA182E1CBF52C3005A9933 /* ViewController.m in Sources */,
 				33FA1BEE1CBF574A005A9933 /* GCDMulticastDelegate.m in Sources */,

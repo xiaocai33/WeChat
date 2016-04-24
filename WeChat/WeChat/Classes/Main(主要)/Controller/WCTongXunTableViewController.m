@@ -138,4 +138,14 @@
     }
 }
 
+#pragma mark - 聊天控制器
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //跳转到聊天消息界面
+    [self performSegueWithIdentifier:@"MsgSegue" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+}
+
 @end
