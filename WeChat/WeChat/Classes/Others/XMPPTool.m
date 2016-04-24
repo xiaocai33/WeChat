@@ -80,6 +80,34 @@ SingletonM(XMPPTool);
     [_stream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }
 
+
+#pragma mark 释放xmppStream相关的资源
+- (void)teardownXmpp{
+    
+    // 移除代理
+    [_stream removeDelegate:self];
+    
+    //停止模块
+    [_vCardModule deactivate];
+    [_vCardAvatarModule deactivate];
+    [_reconnect deactivate];
+    [_roster deactivate];
+    
+    // 断开连接
+    [_stream disconnect];
+    
+    //清空资源
+    _vCardModule = nil;
+    _vCardCoreData = nil;
+    _vCardAvatarModule = nil;
+    _reconnect = nil;
+    _roster = nil;
+    _rosterCoreData = nil;
+    _stream = nil;
+}
+
+
+
 #pragma mark - 连接到服务器[传一个JID]
 - (void)connectToHost{
     WCLog(@"开始连接服务器");
@@ -253,6 +281,10 @@ SingletonM(XMPPTool);
     
     //连接服务器
     [self connectToHost];
+}
+
+- (void)dealloc{
+    [self teardownXmpp];
 }
 
 
