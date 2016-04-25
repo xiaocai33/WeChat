@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-1532" y="638"/>
         </scene>
-        <!--Root View Controller-->
+        <!--历史信息View-->
         <scene sceneID="gme-5e-XkD">
             <objects>
-                <tableViewController id="vPQ-b8-mt6" sceneMemberID="viewController">
+                <tableViewController id="vPQ-b8-mt6" userLabel="历史信息View" customClass="WCHistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sda-nU-D0M">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,24 @@
                             <outlet property="delegate" destination="vPQ-b8-mt6" id="eQE-Ev-Om2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6tJ-e5-JkX"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="6tJ-e5-JkX">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="URH-W9-bR4">
+                            <view key="customView" contentMode="scaleToFill" id="AVb-yB-QHr">
+                                <rect key="frame" x="20" y="5" width="133" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="37F-zU-Uqw">
+                                        <rect key="frame" x="5" y="5" width="20" height="20"/>
+                                        <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activutyIndicatorView" destination="37F-zU-Uqw" id="R2c-ae-E8w"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubI-bc-PQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +122,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="68" sectionHeaderHeight="18" sectionFooterHeight="18" id="zeE-9e-ksP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="6Vv-n0-uYN">
                                 <cells>
@@ -162,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2KL-PC-fAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="552"/>
+            <point key="canvasLocation" x="882" y="576"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="fn7-Wn-7Gq">
@@ -518,7 +535,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hQs-rO-L4g">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="RdM-05-1mI">
                                 <cells>

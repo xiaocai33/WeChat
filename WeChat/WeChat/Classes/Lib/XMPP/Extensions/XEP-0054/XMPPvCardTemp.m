@@ -314,7 +314,7 @@ NSString *const kXMPPvCardTempElement = @"vCard";
 - (void)clearLabels { }
 
 
-- (NSArray *)telecomsAddresses { return nil; }
+- (NSArray *)telecomsAddresses {return nil; }
 - (void)addTelecomsAddress:(XMPPvCardTempTel *)tel { }
 - (void)removeTelecomsAddress:(XMPPvCardTempTel *)tel { }
 - (void)setTelecomsAddresses:(NSArray *)tels { }

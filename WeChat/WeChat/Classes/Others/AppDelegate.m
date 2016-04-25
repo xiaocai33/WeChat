@@ -55,7 +55,11 @@
         self.window.rootViewController = story.instantiateInitialViewController;
         
         // 自动登录服务
-        [[XMPPTool sharedXMPPTool] XMPPLogin:nil];
+        // 1秒后再自动登录
+#warning 一般情况下，都不会马上连接，会稍微等等
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[XMPPTool sharedXMPPTool] XMPPLogin:nil];
+        });
     }
     
     //设置状态栏颜色

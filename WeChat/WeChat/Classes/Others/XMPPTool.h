@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
 #import "XMPPFramework.h"
+extern NSString *const WCLoginStatusChangeNotification;
+
 typedef enum{
     resultBlockTypeSuccess = 0,//登录成功
     resultBlockTypeFailed,//登录失败
     resultBlockTypeNetOut, //登录超时
     resultBlockTypeRegisterSuccess, //注册成功
-    resultBlockTypeRegisterFailed //注册失败
+    resultBlockTypeRegisterFailed, //注册失败
+    resultBlockTypeConnet //正在连接中...
 } resultBlockType;
 
 typedef void (^resultBlock)(resultBlockType type);

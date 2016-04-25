@@ -33,6 +33,7 @@
 		3397DC6E1CCBBB750028BFE5 /* WCAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397DC6D1CCBBB750028BFE5 /* WCAddTableViewController.m */; };
 		33DFD1CB1CCE348600A07222 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DFD1CA1CCE348600A07222 /* NSString+Extension.m */; };
 		33DFD1CE1CCE3E2C00A07222 /* WCMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DFD1CD1CCE3E2C00A07222 /* WCMsgCell.m */; };
+		33DFD1D11CCE496F00A07222 /* WCHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DFD1D01CCE496F00A07222 /* WCHistoryViewController.m */; };
 		33FA18281CBF52C3005A9933 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA18271CBF52C3005A9933 /* main.m */; };
 		33FA182E1CBF52C3005A9933 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FA182D1CBF52C3005A9933 /* ViewController.m */; };
 		33FA18331CBF52C3005A9933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33FA18321CBF52C3005A9933 /* Assets.xcassets */; };
@@ -244,6 +245,8 @@
 		33DFD1CA1CCE348600A07222 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		33DFD1CC1CCE3E2C00A07222 /* WCMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMsgCell.h; sourceTree = "<group>"; };
 		33DFD1CD1CCE3E2C00A07222 /* WCMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMsgCell.m; sourceTree = "<group>"; };
+		33DFD1CF1CCE496F00A07222 /* WCHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCHistoryViewController.h; sourceTree = "<group>"; };
+		33DFD1D01CCE496F00A07222 /* WCHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCHistoryViewController.m; sourceTree = "<group>"; };
 		33FA18231CBF52C3005A9933 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FA18271CBF52C3005A9933 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33FA182C1CBF52C3005A9933 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -672,6 +675,8 @@
 				3397DC6D1CCBBB750028BFE5 /* WCAddTableViewController.m */,
 				3305C84F1CCD0AE9009AEEAA /* WCMsgViewController.h */,
 				3305C8501CCD0AE9009AEEAA /* WCMsgViewController.m */,
+				33DFD1CF1CCE496F00A07222 /* WCHistoryViewController.h */,
+				33DFD1D01CCE496F00A07222 /* WCHistoryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1726,6 +1731,7 @@
 				33FA1BE81CBF574A005A9933 /* XMPPMessage+XEP_0224.m in Sources */,
 				33FA1BE21CBF574A005A9933 /* XMPPPing.m in Sources */,
 				33FA1B971CBF574A005A9933 /* XMPPProcessOne.m in Sources */,
+				33DFD1D11CCE496F00A07222 /* WCHistoryViewController.m in Sources */,
 				33FA1BC71CBF574A005A9933 /* XMPPPubSub.m in Sources */,
 				33FA1BC21CBF574A005A9933 /* XMPPvCardTempModule.m in Sources */,
 				33FA1BC61CBF574A005A9933 /* XMPPIQ+XEP_0060.m in Sources */,

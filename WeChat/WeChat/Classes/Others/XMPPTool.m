@@ -8,7 +8,7 @@
 
 #import "XMPPTool.h"
 #import "XMPPFramework.h"
-
+NSString *const WCLoginStatusChangeNotification = @"WCLoginStatusNotification";
 /*
  * 在AppDelegate实现登录
  
@@ -122,6 +122,8 @@ SingletonM(XMPPTool);
 - (void)connectToHost{
     WCLog(@"开始连接服务器");
     
+    [self setupNotification:resultBlockTypeConnet];
+    
     if (!_stream) {
         [self setupXMPPStream];
     }
@@ -208,11 +210,14 @@ SingletonM(XMPPTool);
     if (error && _resultBlock) {
         _resultBlock(resultBlockTypeNetOut);
     }
+    
+    [self setupNotification:resultBlockTypeNetOut];
 }
 
 #pragma mark - 授权成功
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
     WCLog(@"授权成功");
+    
     
     if (_resultBlock) {
         _resultBlock(resultBlockTypeSuccess);
@@ -220,6 +225,9 @@ SingletonM(XMPPTool);
     
     //授权成功后，发送"在线" 消息
     [self sendOnlineToHost];
+    
+    [self setupNotification:resultBlockTypeSuccess];
+
 }
 
 #pragma mark - 授权失败
@@ -229,6 +237,9 @@ SingletonM(XMPPTool);
     if (_resultBlock) {
         _resultBlock(resultBlockTypeFailed);
     }
+    
+    [self setupNotification:resultBlockTypeFailed];
+
 }
 
 #pragma mark - 注册成功
@@ -244,6 +255,18 @@ SingletonM(XMPPTool);
     if (_resultBlock) {
         _resultBlock(resultBlockTypeRegisterFailed);
     }
+}
+
+#pragma mark - 添加通知
+/**
+ * 通知 WCHistoryViewControllers 登录状态
+ *
+ */
+- (void)setupNotification:(resultBlockType)type{
+    // 将登录状态放入字典，然后通过通知传递
+    NSDictionary *userInfo = @{@"loginStatus":@(type)};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:WCLoginStatusChangeNotification object:nil userInfo:userInfo];
 }
 
 #pragma mark - 公共方法

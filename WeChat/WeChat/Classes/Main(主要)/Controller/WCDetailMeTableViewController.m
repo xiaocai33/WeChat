@@ -60,9 +60,7 @@
 #warning myVCard.telecomsAddresses 这个get方法，没有对电子名片的xml数据进行解析
     // 使用note字段充当电话
     self.phoneLabel.text = myVCard.note;
-    
-    //邮件
-    // 用mailer充当邮件
+    //邮件(解析成功)
 //    self.emailLabel.text = myVCard.mailer;
     if (myVCard.emailAddresses.count >0) {
         self.emailLabel.text = myVCard.emailAddresses[0];
