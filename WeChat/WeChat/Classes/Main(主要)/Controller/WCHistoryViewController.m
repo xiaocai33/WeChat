@@ -56,4 +56,9 @@
     });
 }
 
+- (void)dealloc{
+    //移除通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end

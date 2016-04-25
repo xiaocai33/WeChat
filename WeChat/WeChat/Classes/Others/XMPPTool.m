@@ -257,6 +257,30 @@ SingletonM(XMPPTool);
     }
 }
 
+#pragma mark - 接收到消息
+- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
+    WCLog(@"接收到消息%@", message);
+    //程序在后台的时候,需要通知
+    if ([UIApplication sharedApplication].applicationState != UIApplicationStateActive){
+        WCLog(@"在后台");
+        
+        //注册本地通知
+        UILocalNotification *localNote = [[UILocalNotification alloc] init];
+        
+        //指定通知发送的时间
+        localNote.fireDate = [NSDate date];
+        
+        //声音
+        localNote.soundName = @"default";
+        
+        //内容
+        localNote.alertBody = [NSString stringWithFormat:@"%@\n%@", message.fromStr, message.body];
+        
+        //执行通知
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
+    }
+}
+
 #pragma mark - 添加通知
 /**
  * 通知 WCHistoryViewControllers 登录状态
@@ -268,6 +292,8 @@ SingletonM(XMPPTool);
     
     [[NSNotificationCenter defaultCenter] postNotificationName:WCLoginStatusChangeNotification object:nil userInfo:userInfo];
 }
+
+
 
 #pragma mark - 公共方法
 #pragma make - 退出登陆

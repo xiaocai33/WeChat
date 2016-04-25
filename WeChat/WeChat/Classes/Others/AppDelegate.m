@@ -65,6 +65,16 @@
     //设置状态栏颜色
     //[application setStatusBarStyle:UIStatusBarStyleLightContent];
     
+    //ios8以后要注册通知
+    if ([[UIDevice currentDevice].systemVersion doubleValue] > 8.0) {
+        
+        UIUserNotificationType type= UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+        
+        UIUserNotificationSettings *sets = [UIUserNotificationSettings settingsForTypes:type categories:nil];
+        
+        [application registerUserNotificationSettings:sets];
+    }
+    
     return YES;
 }
 
