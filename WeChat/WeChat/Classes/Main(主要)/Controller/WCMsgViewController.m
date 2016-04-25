@@ -16,6 +16,8 @@
 }
 @property (nonatomic, strong) NSLayoutConstraint *bottomConstraint;
 
+@property (nonatomic, strong) NSLayoutConstraint *inputViewHeightConstraint;
+
 @property (nonatomic, weak) UITableView *tableView;
 @end
 
@@ -100,6 +102,7 @@
     NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[tableView]-0-[inputView(50)]-0-|" options:0 metrics:nil views:dict];
     [self.view addConstraints:vConstraints];
     self.bottomConstraint = [vConstraints lastObject];
+    self.inputViewHeightConstraint = vConstraints[2];
     
 }
 
@@ -184,22 +187,40 @@
 
 #pragma mark - UITextView的代理方法(发消息)
 - (void)textViewDidChange:(UITextView *)textView{
+    //设置字体
+    textView.font = [UIFont systemFontOfSize:16];
+    NSString *text = textView.text;
+    //计算高度
+    CGFloat contentH = [text sizeWithTextFont:[UIFont systemFontOfSize:16] maxW:textView.width].height;
+    
+    // 大于33，超过一行的高度/ 小于68 高度是在三行内
+    if (contentH > 33 && contentH < 64 ) {
+        self.inputViewHeightConstraint.constant = contentH + 18;
+    }
+    
+    
+    
     if ([textView.text containsString:@"\n"]) {//发送消息
+
+        // 去除换行字符
+        text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         //发送消息
-        [self sendMsg:textView.text];
+        [self sendMsg:text withType:@"text"];
         //清空文本框
         textView.text = nil;
+        self.inputViewHeightConstraint.constant = 50;
     }
 }
 #pragma marl - 发送消息
-- (void)sendMsg:(NSString *)text{
+- (void)sendMsg:(NSString *)text withType:(NSString *)type{
     XMPPMessage *msg = [XMPPMessage messageWithType:@"chat" to:self.friendJid];
+    
+    [msg addAttributeWithName:@"bodyType" stringValue:type];
     
     [msg addBody:text];
     
     [[XMPPTool sharedXMPPTool].stream sendElement:msg];
-    
-    
 }
+
 
 @end
