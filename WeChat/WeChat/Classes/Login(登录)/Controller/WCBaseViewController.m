@@ -83,9 +83,11 @@
     [self dismissViewControllerAnimated:NO completion:nil];
     
     // 登录成功来到主界面
-    // 此方法是在子线程补调用，所以在主线程刷新UI
-    UIStoryboard *mainStroy = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.view.window.rootViewController = mainStroy.instantiateInitialViewController;
+    // 此方法是在子线程补调用，所以在主线程刷新UI(ios7存在bug)
+    //UIStoryboard *mainStroy = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //self.view.window.rootViewController = mainStroy.instantiateInitialViewController;
+    //修改为:
+    [UIStoryboard showInitialVCWithName:@"Main"];
 }
 
 @end
