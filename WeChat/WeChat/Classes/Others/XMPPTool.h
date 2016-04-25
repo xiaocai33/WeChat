@@ -31,6 +31,8 @@ SingletonH(XMPPTool);
 /** 花名册模块 */
 @property (nonatomic, strong) XMPPRoster *roster;
 @property (nonatomic, strong)XMPPRosterCoreDataStorage *rosterCoreData;
+/** 消息模块 */
+@property (nonatomic, strong) XMPPMessageArchivingCoreDataStorage *msgCoreData;
 
 @property (nonatomic, strong) XMPPStream *stream;
 /**

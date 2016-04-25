@@ -27,7 +27,9 @@
     XMPPvCardAvatarModule *_vCardAvatarModule;
     //自动连接模块
     XMPPReconnect *_reconnect;
-    //花名册模块
+    //消息模块
+    XMPPMessageArchiving *_msgArchiving;
+    
     
 }
 
@@ -76,6 +78,11 @@ SingletonM(XMPPTool);
     _roster = [[XMPPRoster alloc] initWithRosterStorage:_rosterCoreData];
     [_roster activate:_stream];
     
+    //消息模块
+    _msgCoreData = [XMPPMessageArchivingCoreDataStorage sharedInstance];
+    _msgArchiving = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:_msgCoreData];
+    [_msgArchiving activate:_stream];
+    
     //设置代理
     [_stream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }
@@ -92,6 +99,7 @@ SingletonM(XMPPTool);
     [_vCardAvatarModule deactivate];
     [_reconnect deactivate];
     [_roster deactivate];
+    [_msgArchiving deactivate];
     
     // 断开连接
     [_stream disconnect];
@@ -103,6 +111,8 @@ SingletonM(XMPPTool);
     _reconnect = nil;
     _roster = nil;
     _rosterCoreData = nil;
+    _msgArchiving = nil;
+    _msgCoreData = nil;
     _stream = nil;
 }
 

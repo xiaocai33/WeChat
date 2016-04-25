@@ -7,6 +7,7 @@
 // 通讯录模块
 
 #import "WCTongXunTableViewController.h"
+#import "WCMsgViewController.h"
 
 @interface WCTongXunTableViewController () <NSFetchedResultsControllerDelegate>{
     NSFetchedResultsController *_resultsContrl;
@@ -140,12 +141,22 @@
 
 #pragma mark - 聊天控制器
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    XMPPUserCoreDataStorageObject *friend = _resultsContrl.fetchedObjects[indexPath.row];
+    
+    XMPPJID *freindJid = friend.jid;
+
     //跳转到聊天消息界面
-    [self performSegueWithIdentifier:@"MsgSegue" sender:nil];
+    [self performSegueWithIdentifier:@"MsgSegue" sender:freindJid];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
+    id destVc = segue.destinationViewController;
+    if ([destVc isKindOfClass:[WCMsgViewController class]]) {
+        
+        WCMsgViewController *msgVc = (WCMsgViewController *)destVc;
+        
+        msgVc.friendJid = sender;
+    }
 }
 
 @end

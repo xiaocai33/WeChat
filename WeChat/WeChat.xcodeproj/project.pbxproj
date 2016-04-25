@@ -908,7 +908,7 @@
 				33FA1AFA1CBF5749005A9933 /* XEP-0100 */,
 				33FA1AFD1CBF5749005A9933 /* XEP-0106 */,
 				33FA1B001CBF5749005A9933 /* XEP-0115 */,
-				33FA1B0B1CBF5749005A9933 /* XEP-0136 */,
+				33FA1B0B1CBF5749005A9933 /* XEP-0136[消息模块] */,
 				33FA1B171CBF5749005A9933 /* XEP-0153 */,
 				33FA1B1A1CBF5749005A9933 /* XEP-0172 */,
 				33FA1B1F1CBF5749005A9933 /* XEP-0184 */,
@@ -1275,13 +1275,14 @@
 			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
-		33FA1B0B1CBF5749005A9933 /* XEP-0136 */ = {
+		33FA1B0B1CBF5749005A9933 /* XEP-0136[消息模块] */ = {
 			isa = PBXGroup;
 			children = (
 				33FA1B0C1CBF5749005A9933 /* CoreDataStorage */,
 				33FA1B151CBF5749005A9933 /* XMPPMessageArchiving.h */,
 				33FA1B161CBF5749005A9933 /* XMPPMessageArchiving.m */,
 			);
+			name = "XEP-0136[消息模块]";
 			path = "XEP-0136";
 			sourceTree = "<group>";
 		};

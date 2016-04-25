@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class XMPPJID;
 @interface WCMsgViewController : UIViewController
+/** 好友的JID */
+@property (nonatomic, strong) XMPPJID *friendJid;
 
 @end
