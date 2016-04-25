@@ -9,8 +9,9 @@
 #import "WCMsgViewController.h"
 #import "WCInputView.h"
 #import "XMPPJID.h"
+#import "WCMsgCell.h"
 
-@interface WCMsgViewController ()<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>{
+@interface WCMsgViewController ()<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>{
     NSFetchedResultsController *_resultController;
 }
 @property (nonatomic, strong) NSLayoutConstraint *bottomConstraint;
@@ -79,6 +80,7 @@
     
     //创建WCInputView
     WCInputView *inputView = [WCInputView inputView];
+    inputView.textView.delegate = self;
     [self.view addSubview:inputView];
     
     //自动布局
@@ -149,20 +151,26 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
-    }
+    WCMsgCell *cell = [WCMsgCell createMsgCell:tableView];
     // 获取聊天消息对象
     XMPPMessageArchiving_Message_CoreDataObject *msg = _resultController.fetchedObjects[indexPath.row];
     //显示消息
+    NSString *text = nil;
     if ([msg.outgoing boolValue]) {//自己发
-        cell.textLabel.text = [NSString stringWithFormat:@"Me: %@", msg.body];
+        text = [NSString stringWithFormat:@"Me: %@", msg.body];
     }else{
-        cell.textLabel.text = [NSString stringWithFormat:@"Other: %@", msg.body];
+        text = [NSString stringWithFormat:@"Other: %@", msg.body];
     }
+    cell.text = text;
+    
+    cell.textLabel.text = text;
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    XMPPMessageArchiving_Message_CoreDataObject *msg = _resultController.fetchedObjects[indexPath.row];
+    return [msg.body sizeWithTextFont:[UIFont systemFontOfSize:17] maxW:self.view.width].height +15;
 }
 
 #pragma mark 滚动到底部
@@ -174,5 +182,24 @@
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
+#pragma mark - UITextView的代理方法(发消息)
+- (void)textViewDidChange:(UITextView *)textView{
+    if ([textView.text containsString:@"\n"]) {//发送消息
+        //发送消息
+        [self sendMsg:textView.text];
+        //清空文本框
+        textView.text = nil;
+    }
+}
+#pragma marl - 发送消息
+- (void)sendMsg:(NSString *)text{
+    XMPPMessage *msg = [XMPPMessage messageWithType:@"chat" to:self.friendJid];
+    
+    [msg addBody:text];
+    
+    [[XMPPTool sharedXMPPTool].stream sendElement:msg];
+    
+    
+}
 
 @end

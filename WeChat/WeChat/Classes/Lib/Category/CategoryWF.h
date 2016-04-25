@@ -14,5 +14,6 @@
 #import "UIStoryboard+Extension.h"
 #import "UITextField+Extension.h"
 #import "UIScreen+Extension.h"
+#import "NSString+Extension.h"
 
 #endif
