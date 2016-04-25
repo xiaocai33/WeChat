@@ -63,7 +63,11 @@
     
     //邮件
     // 用mailer充当邮件
-    self.emailLabel.text = myVCard.mailer;
+//    self.emailLabel.text = myVCard.mailer;
+    if (myVCard.emailAddresses.count >0) {
+        self.emailLabel.text = myVCard.emailAddresses[0];
+    }
+    
 }
 #pragma mark - UITableViewDelegate代理方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

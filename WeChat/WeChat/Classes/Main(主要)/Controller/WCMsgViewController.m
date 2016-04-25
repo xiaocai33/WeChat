@@ -198,8 +198,6 @@
         self.inputViewHeightConstraint.constant = contentH + 18;
     }
     
-    
-    
     if ([textView.text containsString:@"\n"]) {//发送消息
 
         // 去除换行字符
